@@ -1,0 +1,317 @@
+/* css/style.css */
+
+/* --- Reset & Global --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Padding agar konten tidak menempel di tepi layar kecil */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Batas lebar maksimum */
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #0056b3; /* Warna biru BUMN */
+}
+
+button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Biru primer */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- Screens --- */
+#start-screen, #quiz-screen, #results-screen {
+    display: none; /* Akan diatur oleh JS */
+}
+
+#start-screen p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* --- Style Sosial Media --- */
+.social-links {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.social-links p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.social-links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 1rem; /* Sesuaikan jika pakai ikon */
+    transition: color 0.2s ease;
+}
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* --- Quiz Screen Elements --- */
+#timer-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d9534f; /* Merah untuk penekanan waktu */
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    display: inline-block; /* Agar background tidak full width */
+}
+
+#question-area {
+    margin-bottom: 25px;
+    text-align: left; /* Soal rata kiri */
+}
+
+/* --- Style Teks Bacaan (Reading) --- */
+#passage-text {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: justify; /* Rata kiri-kanan untuk bacaan */
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #495057;
+    display: none; /* Sembunyikan secara default, tampilkan oleh JS jika ada passage */
+}
+
+#question-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#options-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#options-list li {
+    margin-bottom: 10px;
+}
+
+.option-button {
+    width: 100%; /* Tombol pilihan full width */
+    background-color: #e9ecef; /* Warna netral */
+    color: #333;
+    text-align: left; /* Teks pilihan rata kiri */
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px; /* Tambahkan radius */
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer; /* Eksplisit cursor pointer */
+    font-size: 1rem;
+    display: block; /* Pastikan block */
+    margin-top: 0; /* Reset margin */
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: #d1dce5; /* Warna hover lebih terang */
+    border-color: #adb5bd;
+}
+
+.option-button:disabled {
+    background-color: #f8f9fa; /* Warna saat nonaktif */
+    color: #6c757d;
+    cursor: default;
+}
+
+/* Style feedback setelah jawaban */
+.option-button.correct {
+    background-color: #d4edda !important; /* Hijau untuk benar */
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+    font-weight: bold;
+}
+
+.option-button.incorrect {
+    background-color: #f8d7da !important; /* Merah untuk salah */
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+/* Tombol yang dipilih dan salah */
+.option-button.selected.incorrect {
+     /* Gaya bisa sama atau sedikit berbeda untuk menandakan pilihan user yg salah */
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.option-button.correct-answer { /* Untuk menandai jawaban yg benar jika user salah pilih */
+    /* Mirip dengan correct, tapi mungkin border lebih tebal atau efek lain */
+     background-color: #d4edda !important;
+     border: 2px solid #155724 !important; /* Border hijau tebal */
+     color: #155724 !important;
+}
+
+.option-button:disabled { /* Status umum setelah jawaban dipilih */
+    cursor: default;
+    /* Warna background akan ditentukan oleh class correct/incorrect/correct-answer */
+}
+
+.option-button:disabled:not(.correct):not(.incorrect):not(.correct-answer) {
+     /* Fallback jika tidak ada class lain (seharusnya tidak terjadi) */
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+#feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px; /* Beri ruang agar layout tidak loncat */
+}
+
+.feedback.correct {
+    color: #155724; /* Hijau */
+}
+
+.feedback.incorrect {
+    color: #721c24; /* Merah */
+}
+
+#next-button {
+    background-color: #28a745; /* Hijau untuk next */
+    float: right; /* Posisikan di kanan */
+}
+#next-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+
+/* --- Results Screen --- */
+#results-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+#results-screen span {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+#restart-button {
+    background-color: #ffc107; /* Kuning untuk restart */
+    color: #333;
+}
+#restart-button:hover {
+    background-color: #e0a800;
+}
+
+/* --- Responsive Design --- */
+
+/* Untuk layar yang lebih kecil (misal: ponsel) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Kurangi padding body */
+    }
+
+    .container {
+        padding: 20px; /* Kurangi padding container */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    #timer-display {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+    #question-text {
+        font-size: 1.1rem;
+    }
+
+    .option-button {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+     #next-button {
+        float: none; /* Tombol next jadi full width di mobile */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #results-screen p {
+        font-size: 1.1rem;
+    }
+     #results-screen span {
+        font-size: 1.3rem;
+    }
+
+    #passage-text { font-size: 0.9rem; padding: 10px; }
+    .social-links a { margin: 0 5px; }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 400px) {
+     h1 {
+        font-size: 1.6rem;
+    }
+    .container {
+        padding: 15px;
+    }
+     button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    #timer-display {
+        font-size: 1.3rem;
+    }
+}

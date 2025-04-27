@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal BUMN - Simulasi Waktu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Layar Mulai -->
+        <div id="start-screen">
+            <h1>Simulasi Latihan Soal Rekrutmen BUMN</h1>
+            <p>Uji kemampuan Grammar & Reading Anda dengan batasan waktu seperti ujian sebenarnya. Fokus pada manajemen waktu!</p>
+            <button id="start-button">Mulai Latihan</button>
+            <!-- Area Promosi Sosial Media -->
+            <div class="social-links">
+                <p>Ikuti saya di sosial media:</p>
+                <!-- Ganti '#' dengan link profil Anda -->
+                <a href="https://www.instagram.com/imammukhri/" target="_blank" title="Instagram">Instagram</a> |
+                <a href="https://www.linkedin.com/in/mukhri/" target="_blank" title="LinkedIn">LinkedIn</a> |
+                <a href="https://github.com/mendiang" target="_blank" title="Github">Github</a>
+                <!-- Jika pakai Font Awesome: -->
+                <!-- <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a> -->
+                <!-- <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+                <!-- <a href="#" target="_blank" title="Github"><i class="fab fa-github"></i></a> -->
+            </div>
+        </div>
+
+        <!-- 2. Layar Kuis -->
+        <div id="quiz-screen">
+            <h2>Soal Latihan</h2>
+            <div id="timer-display">00:00</div>
+            <div id="question-area">
+                <!-- Area untuk teks bacaan (Reading) -->
+                <div id="passage-text"></div>
+                <!-- Area untuk pertanyaan -->
+                <p id="question-text">Memuat pertanyaan...</p>
+                <ul id="options-list">
+                    <!-- Pilihan jawaban akan di-generate oleh JS -->
+                </ul>
+                <p id="feedback"></p> <!-- Untuk pesan benar/salah -->
+            </div>
+            <button id="next-button" disabled>Soal Berikutnya</button>
+        </div>
+
+        <!-- 3. Layar Hasil -->
+        <div id="results-screen">
+            <h2>Hasil Latihan</h2>
+            <p>Latihan Selesai!</p>
+            <p>Skor Anda: <span id="score">0</span> / <span id="total-questions">0</span></p>
+            <button id="restart-button">Coba Lagi</button>
+        </div>
+    </div>
+
+    <!-- Script harus di akhir body dan type="module" -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
