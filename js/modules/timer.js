@@ -1,46 +1,44 @@
 // js/modules/timer.js
 
-let timerInterval = null;
-let timeLeft = 0;
-let onTickCallback = null;
-let onTimeUpCallback = null;
+let questionTimerInterval = null;
+let questionTimeLeft = 0;
+let questionTickCallback = null;
+let questionTimeUpCallback = null;
 
-function startTimer(durationSeconds, tickCallback, timeUpCallback) {
-    stopTimer(); // Pastikan timer sebelumnya berhenti
-    timeLeft = durationSeconds;
-    onTickCallback = tickCallback;
-    onTimeUpCallback = timeUpCallback;
+function startQuestionTimer(durationSeconds, tickCallback, timeUpCallback) {
+    stopQuestionTimer(); // Hentikan timer sebelumnya jika ada
 
-    // Panggil tick pertama kali untuk menampilkan waktu awal
-    if (onTickCallback) {
-        onTickCallback(timeLeft);
+    questionTimeLeft = durationSeconds;
+    questionTickCallback = tickCallback;
+    questionTimeUpCallback = timeUpCallback;
+
+    // Panggil tick pertama kali
+    if (questionTickCallback) {
+        questionTickCallback(questionTimeLeft);
     }
 
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        if (onTickCallback) {
-            onTickCallback(timeLeft); // Update tampilan setiap detik
+    questionTimerInterval = setInterval(() => {
+        questionTimeLeft--;
+        if (questionTickCallback) {
+            questionTickCallback(questionTimeLeft);
         }
 
-        if (timeLeft <= 0) {
-            stopTimer();
-            if (onTimeUpCallback) {
-                onTimeUpCallback(); // Panggil fungsi saat waktu habis
+        if (questionTimeLeft <= 0) {
+            stopQuestionTimer(); // Hentikan interval
+            if (questionTimeUpCallback) {
+                questionTimeUpCallback(); // Panggil callback waktu habis
             }
         }
-    }, 1000); // Interval 1 detik
+    }, 1000);
 }
 
-function stopTimer() {
-    clearInterval(timerInterval);
-    timerInterval = null;
+// Fungsi untuk menghentikan timer PER SOAL
+function stopQuestionTimer() {
+    clearInterval(questionTimerInterval);
+    questionTimerInterval = null;
 }
 
-function getTimeLeft() {
-    return timeLeft;
-}
-
-// Format waktu MM:SS (helper function internal atau bisa di utils.js)
+// Fungsi format waktu (tetap sama)
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -48,5 +46,4 @@ function formatTime(seconds) {
     return `${minutes}:${formattedSeconds}`;
 }
 
-
-export { startTimer, stopTimer, getTimeLeft, formatTime };
+export { startQuestionTimer, stopQuestionTimer, formatTime };

@@ -13,6 +13,8 @@ const nextButton = document.getElementById('next-button');
 const scoreElement = document.getElementById('score');
 const totalQuestionsElement = document.getElementById('total-questions');
 const restartButton = document.getElementById('restart-button');
+const explanationArea = document.getElementById('explanation-area'); // <-- Elemen baru
+const explanationTextElement = document.getElementById('explanation-text'); // <-- Elemen baru
 
 function showScreen(screenName) {
     startScreen.style.display = 'none';
@@ -45,6 +47,9 @@ function displayQuestion(questionData, questionNumber, totalQuestions) {
     questionText.textContent = `(${questionNumber}/${totalQuestions}) ${questionData.question}`;
     optionsList.innerHTML = ''; // Kosongkan pilihan sebelumnya
     feedbackElement.textContent = ''; // Kosongkan feedback
+    feedbackElement.className = 'feedback';
+    explanationArea.style.display = 'none'; // <-- Sembunyikan pembahasan
+    explanationTextElement.textContent = ''; // <-- Kosongkan teks pembahasan
     nextButton.disabled = true; // Nonaktifkan tombol next sampai jawaban dipilih
 
     questionData.options.forEach((option, index) => {
@@ -58,31 +63,43 @@ function displayQuestion(questionData, questionNumber, totalQuestions) {
     });
 }
 
-function showFeedback(isCorrect, correctAnswer, selectedIndex, questionData) {
+function showFeedback(isCorrect, correctAnswer, selectedIndex, questionData, feedbackMessage = null) {
     const buttons = optionsList.querySelectorAll('.option-button');
-    const selectedButton = buttons[selectedIndex];
+    const selectedButton = selectedIndex !== null ? buttons[selectedIndex] : null; // Handle jika index null (timeout)
 
     // Nonaktifkan semua tombol
     buttons.forEach(btn => btn.disabled = true);
 
-    // Tambahkan kelas 'selected' ke tombol yang dipilih
-    selectedButton.classList.add('selected');
+    // Tampilkan feedback (bisa di-override oleh message)
+    if (feedbackMessage) {
+        feedbackElement.textContent = feedbackMessage;
+        feedbackElement.className = 'feedback incorrect'; // Asumsi timeout/salah
+        if (selectedButton) selectedButton.classList.add('incorrect'); // Highlight merah jika ada pilihan
+   } else if (isCorrect) {
+       feedbackElement.textContent = 'Jawaban Benar!';
+       feedbackElement.className = 'feedback correct';
+       if(selectedButton) selectedButton.classList.add('correct');
+   } else {
+       feedbackElement.textContent = `Jawaban Salah. Yang benar: ${correctAnswer}`;
+       feedbackElement.className = 'feedback incorrect';
+       if(selectedButton) selectedButton.classList.add('incorrect');
+   }
 
-    if (isCorrect) {
-        feedbackElement.textContent = 'Jawaban Benar!';
-        feedbackElement.className = 'feedback correct';
-        selectedButton.classList.add('correct'); // Highlight hijau tombol benar
-    } else {
-        feedbackElement.textContent = `Jawaban Salah. Yang benar: ${correctAnswer}`;
-        feedbackElement.className = 'feedback incorrect';
-        selectedButton.classList.add('incorrect'); // Highlight merah tombol pilihan salah
-
-        // Cari dan highlight jawaban yang benar
+    // Highlight jawaban benar jika user salah atau waktu habis
+   if (!isCorrect || feedbackMessage) {
         const correctIndex = questionData.options.findIndex(opt => opt === correctAnswer);
         if (correctIndex > -1) {
-         buttons[correctIndex].classList.add('correct-answer'); // Highlight khusus jawaban benar
+             buttons[correctIndex].classList.add('correct-answer');
         }
-    }
+   }
+
+   // Tampilkan Pembahasan jika ada
+   if (questionData.explanation) {
+       explanationTextElement.innerHTML = questionData.explanation; // innerHTML jika ada format
+       explanationArea.style.display = 'block';
+   } else {
+        explanationArea.style.display = 'none';
+   }
 
     nextButton.disabled = false; // Aktifkan tombol next setelah jawaban dipilih
     // Nonaktifkan semua tombol pilihan setelah dipilih
@@ -101,7 +118,6 @@ function setupRestartButton(callback) {
     restartButton.removeEventListener('click', callback);
     restartButton.addEventListener('click', callback);
 }
-
 
 export {
     showScreen,

@@ -30,7 +30,7 @@
         <!-- 2. Layar Kuis -->
         <div id="quiz-screen">
             <h2>Soal Latihan</h2>
-            <div id="timer-display">00:00</div>
+            <div id="timer-display">01:00</div>
             <div id="question-area">
                 <!-- Area untuk teks bacaan (Reading) -->
                 <div id="passage-text"></div>
@@ -40,6 +40,13 @@
                     <!-- Pilihan jawaban akan di-generate oleh JS -->
                 </ul>
                 <p id="feedback"></p> <!-- Untuk pesan benar/salah -->
+
+                <!-- Area Pembahasan Baru -->
+                <div id="explanation-area" style="display: none;"> <!-- Sembunyikan awal -->
+                    <hr> <!-- Garis pemisah opsional -->
+                    <h4>Pembahasan:</h4>
+                    <p id="explanation-text"></p>
+                </div>
             </div>
             <button id="next-button" disabled>Soal Berikutnya</button>
         </div>

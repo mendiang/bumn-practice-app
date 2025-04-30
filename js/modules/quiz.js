@@ -19,9 +19,11 @@ function getCurrentQuestion() {
     return null; // Kuis selesai
 }
 
-function submitAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    if (!currentQuestion) return false;
+function submitAnswer(selectedIndex, currentQuestion) {
+    if (!currentQuestion || selectedIndex === null || selectedIndex === undefined) 
+        {
+        return { isCorrect: false, correctAnswer: currentQuestion?.answer || null }; 
+}
 
     const selectedAnswer = currentQuestion.options[selectedIndex];
     const correctAnswer = currentQuestion.answer;
@@ -34,10 +36,23 @@ function submitAnswer(selectedIndex) {
     userAnswers.push({
         questionId: currentQuestion.id,
         selected: selectedAnswer,
-        isCorrect: isCorrect
+        isCorrect: isCorrect,
+        timedOut: false 
     });
 
-    return { isCorrect, correctAnswer }; // Kembalikan hasil pengecekan
+    return {isCorrect, correctAnswer}; 
+}
+
+// Fungsi baru untuk menandai jawaban timeout (jika diperlukan)
+function recordTimeout(currentQuestion) {
+    if (!currentQuestion) return;
+    userAnswers.push({
+       questionId: currentQuestion.id,
+       selected: null, // Tidak ada jawaban dipilih
+       isCorrect: false,
+       timedOut: true
+   });
+   // Skor tidak bertambah
 }
 
 function moveToNextQuestion() {
@@ -74,6 +89,7 @@ export {
     loadQuestions,
     getCurrentQuestion,
     submitAnswer,
+    recordTimeout, // <-- Ekspor fungsi baru
     moveToNextQuestion,
     isQuizOver,
     getScore,
