@@ -44,7 +44,7 @@ function displayQuestion(questionData, questionNumber, totalQuestions) {
         passageTextElement.style.display = 'none';
     }
 
-    questionText.textContent = `(${questionNumber}/${totalQuestions}) ${questionData.question}`;
+    questionText.innerHTML = `(${questionNumber}/${totalQuestions}) ${questionData.question}`; // Kode yang Diperbaiki:
     optionsList.innerHTML = ''; // Kosongkan pilihan sebelumnya
     feedbackElement.textContent = ''; // Kosongkan feedback
     feedbackElement.className = 'feedback';
