@@ -330,7 +330,7 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err3',
         type: 'grammar',
-        question: "The manager reviewed the performance reports (A) <u>careful</u> (B) <u>before</u> (C) making any (D) decisions.",
+        question: "The manager reviewed the performance <u>reports</u> (A) <u>careful</u> (B) <u>before</u> (C) making <u>any</u> (D) decisions.",
         options: ["A", "B", "C", "D"],
         answer: "B",
         explanation: "Kesalahan ada pada (B) 'careful'. Kata ini seharusnya menerangkan kata kerja 'reviewed', sehingga membutuhkan bentuk adverb 'carefully', bukan adjective 'careful'."
@@ -338,15 +338,15 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err4',
         type: 'grammar',
-        question: "Responsibilities include (A) <u>managing</u> budgets, (B) <u>leading</u> the team, and (C) <u>to prepare</u> (D) weekly reports.",
+        question: "Responsibilities <u>include</u> (A) <u>managing</u> budgets, (B) <u>leading</u> the team, and (C) <u>to prepare</u> (D) weekly reports.",
         options: ["A", "B", "C", "D"],
-        answer: "C",
-        explanation: "Kesalahan ada pada (C) 'to prepare'. Untuk menjaga struktur paralel dalam daftar (managing..., leading...), bentuk gerund 'preparing' harus digunakan agar setara dengan item lainnya, bukan infinitive 'to prepare'."
+        answer: "D",
+        explanation: "Kesalahan ada pada (D) 'to prepare'. Untuk menjaga struktur paralel dalam daftar (managing..., leading...), bentuk gerund 'preparing' harus digunakan agar setara dengan item lainnya, bukan infinitive 'to prepare'."
     },
     {
         id: 'bumn_err5',
         type: 'grammar',
-        question: "When the auditors (A) <u>arrived</u>, the finance department (B) <u>already prepares</u> (C) all the necessary (D) documents.",
+        question: "When <u>the auditors</u> (A) <u>arrived</u>, the finance department (B) <u>already prepares</u> (C) all the necessary (D) documents.",
         options: ["A", "B", "C", "D"],
         answer: "C",
         explanation: "Kesalahan ada pada (C) 'already prepares'. Tindakan menyiapkan dokumen ('prepare') terjadi *sebelum* auditor tiba ('arrived', masa lalu). Gunakan Past Perfect Tense ('had already prepared') untuk menekankan bahwa satu tindakan di masa lalu selesai sebelum tindakan lain di masa lalu dimulai."
