@@ -303,6 +303,111 @@ const readingQuestions = [
         answer: "It involves changes from producers, consumers, and policymakers.",
         explanation: "Paragraf ketiga menyebutkan tantangan ('changes in consumer behavior') dan diakhiri dengan menyatakan bahwa 'Governments, businesses, and consumers all have roles to play', menyiratkan keterlibatan berbagai pihak."
     },
+    {
+        id: 'r7q1',
+        type: 'reading',
+        passage: `
+            <p>The concept of organizational resilience has evolved significantly over the past decade. Traditional perspectives on resilience focused primarily on risk management and business continuity planning—structured approaches to identifying potential threats and implementing safeguards. However, contemporary understanding has expanded to encompass a more dynamic and multifaceted framework. Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.</p>
+            <p>This shift reflects growing recognition that the business environment is increasingly characterized by what scholars term "VUCA" conditions—volatility, uncertainty, complexity, and ambiguity. Under such conditions, static defense mechanisms prove insufficient. Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly. This requires not only robust systems and processes but also cultural elements such as psychological safety, which enables individuals to voice concerns and suggest novel approaches without fear of repercussion.</p>
+            <p>Empirical studies across diverse sectors suggest that resilient organizations share several key attributes: redundancy in critical systems, diversity in thought and capability, loose coupling between operational units, and strong organizational learning mechanisms. These features enable what organizational theorists call "requisite variety"—internal complexity sufficient to match external complexity. When properly calibrated, this variety allows organizations to maintain stability in core functions while simultaneously exploring new possibilities and configurations.</p>
+            <p>Recent research has also highlighted the paradoxical nature of resilience. The very qualities that promote stability under normal conditions may undermine adaptability during radical change. For instance, standardized procedures that enhance efficiency during routine operations can become liabilities when unprecedented challenges emerge. Consequently, truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation. This delicate equilibrium requires sophisticated governance mechanisms and leadership approaches that accommodate seemingly incompatible organizational logics.</p>
+            <p>Critics argue that the concept of resilience has become problematically elastic, potentially serving as a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals. From this perspective, exhortations to develop resilience may inadvertently normalize precarity rather than addressing its structural causes. This critique has particular relevance in contexts where resource constraints limit organizational capacity to implement comprehensive resilience programs. Nevertheless, proponents maintain that when properly conceptualized and implemented, resilience initiatives can generate substantial value, not only in crisis situations but also in everyday operations.</p>
+        `,
+        question: "According to the passage, the contemporary understanding of organizational resilience primarily emphasizes:",
+        options: [
+            "Risk management protocols",
+            "Business continuity planning",
+            "Adaptive capacity",
+            "Psychological safety",
+            "Requisite variety"
+        ],
+        answer: "Adaptive capacity",
+        explanation: "Paragraph 1 explicitly states 'Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.' While other options like risk management and business continuity planning are mentioned, they are described as 'traditional perspectives' rather than the contemporary understanding."
+    },
+    {
+        id: 'r7q2',
+        type: 'reading',
+        passage: `
+            <p>The concept of organizational resilience has evolved significantly over the past decade. Traditional perspectives on resilience focused primarily on risk management and business continuity planning—structured approaches to identifying potential threats and implementing safeguards. However, contemporary understanding has expanded to encompass a more dynamic and multifaceted framework. Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.</p>
+            <p>This shift reflects growing recognition that the business environment is increasingly characterized by what scholars term "VUCA" conditions—volatility, uncertainty, complexity, and ambiguity. Under such conditions, static defense mechanisms prove insufficient. Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly. This requires not only robust systems and processes but also cultural elements such as psychological safety, which enables individuals to voice concerns and suggest novel approaches without fear of repercussion.</p>
+            <p>Empirical studies across diverse sectors suggest that resilient organizations share several key attributes: redundancy in critical systems, diversity in thought and capability, loose coupling between operational units, and strong organizational learning mechanisms. These features enable what organizational theorists call "requisite variety"—internal complexity sufficient to match external complexity. When properly calibrated, this variety allows organizations to maintain stability in core functions while simultaneously exploring new possibilities and configurations.</p>
+            <p>Recent research has also highlighted the paradoxical nature of resilience. The very qualities that promote stability under normal conditions may undermine adaptability during radical change. For instance, standardized procedures that enhance efficiency during routine operations can become liabilities when unprecedented challenges emerge. Consequently, truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation. This delicate equilibrium requires sophisticated governance mechanisms and leadership approaches that accommodate seemingly incompatible organizational logics.</p>
+            <p>Critics argue that the concept of resilience has become problematically elastic, potentially serving as a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals. From this perspective, exhortations to develop resilience may inadvertently normalize precarity rather than addressing its structural causes. This critique has particular relevance in contexts where resource constraints limit organizational capacity to implement comprehensive resilience programs. Nevertheless, proponents maintain that when properly conceptualized and implemented, resilience initiatives can generate substantial value, not only in crisis situations but also in everyday operations.</p>
+        `,
+        question: "The text suggests that 'VUCA' conditions require organizations to",
+        options: [
+            "Implement more stringent control mechanisms",
+            "Develop capabilities for environmental sensing and resource reconfiguration",
+            "Focus exclusively on core operational efficiency",
+            "Prioritize standardized procedures across all functional areas",
+            "Minimize redundancy in critical systems"
+        ],
+        answer: "Develop capabilities for environmental sensing and resource reconfiguration",
+        explanation: "The passage states that under VUCA conditions, 'Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly.' This directly corresponds to option B, while other options either contradict the passage or represent incomplete aspects of the response to VUCA conditions."
+    },
+    {
+        id: 'r7q3',
+        type: 'reading',
+        passage: `
+            <p>The concept of organizational resilience has evolved significantly over the past decade. Traditional perspectives on resilience focused primarily on risk management and business continuity planning—structured approaches to identifying potential threats and implementing safeguards. However, contemporary understanding has expanded to encompass a more dynamic and multifaceted framework. Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.</p>
+            <p>This shift reflects growing recognition that the business environment is increasingly characterized by what scholars term "VUCA" conditions—volatility, uncertainty, complexity, and ambiguity. Under such conditions, static defense mechanisms prove insufficient. Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly. This requires not only robust systems and processes but also cultural elements such as psychological safety, which enables individuals to voice concerns and suggest novel approaches without fear of repercussion.</p>
+            <p>Empirical studies across diverse sectors suggest that resilient organizations share several key attributes: redundancy in critical systems, diversity in thought and capability, loose coupling between operational units, and strong organizational learning mechanisms. These features enable what organizational theorists call "requisite variety"—internal complexity sufficient to match external complexity. When properly calibrated, this variety allows organizations to maintain stability in core functions while simultaneously exploring new possibilities and configurations.</p>
+            <p>Recent research has also highlighted the paradoxical nature of resilience. The very qualities that promote stability under normal conditions may undermine adaptability during radical change. For instance, standardized procedures that enhance efficiency during routine operations can become liabilities when unprecedented challenges emerge. Consequently, truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation. This delicate equilibrium requires sophisticated governance mechanisms and leadership approaches that accommodate seemingly incompatible organizational logics.</p>
+            <p>Critics argue that the concept of resilience has become problematically elastic, potentially serving as a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals. From this perspective, exhortations to develop resilience may inadvertently normalize precarity rather than addressing its structural causes. This critique has particular relevance in contexts where resource constraints limit organizational capacity to implement comprehensive resilience programs. Nevertheless, proponents maintain that when properly conceptualized and implemented, resilience initiatives can generate substantial value, not only in crisis situations but also in everyday operations.</p>
+        `,
+        question: "The phrase 'loose coupling between operational units' in the third paragraph most likely refers to",
+        options: [
+            "Minimal communication between departments",
+            "Independence that prevents cascade failures across systems",
+            "Weak organizational structure",
+            "Poor integration of business functions",
+            "Decentralized leadership without coordination"
+        ],
+        answer: "Independence that prevents cascade failures across systems",
+        explanation: "While the term 'loose coupling' isn't explicitly defined, contextual clues in paragraph 3 suggest it's one of several 'key attributes' that enable resilience. In organizational theory, loose coupling refers to components that are connected but retain independence, preventing failures from cascading throughout the entire system. This aligns with the passage's emphasis on maintaining stability while adapting."
+    },
+    {
+        id: 'r7q4',
+        type: 'reading',
+        passage: `
+            <p>The concept of organizational resilience has evolved significantly over the past decade. Traditional perspectives on resilience focused primarily on risk management and business continuity planning—structured approaches to identifying potential threats and implementing safeguards. However, contemporary understanding has expanded to encompass a more dynamic and multifaceted framework. Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.</p>
+            <p>This shift reflects growing recognition that the business environment is increasingly characterized by what scholars term "VUCA" conditions—volatility, uncertainty, complexity, and ambiguity. Under such conditions, static defense mechanisms prove insufficient. Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly. This requires not only robust systems and processes but also cultural elements such as psychological safety, which enables individuals to voice concerns and suggest novel approaches without fear of repercussion.</p>
+            <p>Empirical studies across diverse sectors suggest that resilient organizations share several key attributes: redundancy in critical systems, diversity in thought and capability, loose coupling between operational units, and strong organizational learning mechanisms. These features enable what organizational theorists call "requisite variety"—internal complexity sufficient to match external complexity. When properly calibrated, this variety allows organizations to maintain stability in core functions while simultaneously exploring new possibilities and configurations.</p>
+            <p>Recent research has also highlighted the paradoxical nature of resilience. The very qualities that promote stability under normal conditions may undermine adaptability during radical change. For instance, standardized procedures that enhance efficiency during routine operations can become liabilities when unprecedented challenges emerge. Consequently, truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation. This delicate equilibrium requires sophisticated governance mechanisms and leadership approaches that accommodate seemingly incompatible organizational logics.</p>
+            <p>Critics argue that the concept of resilience has become problematically elastic, potentially serving as a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals. From this perspective, exhortations to develop resilience may inadvertently normalize precarity rather than addressing its structural causes. This critique has particular relevance in contexts where resource constraints limit organizational capacity to implement comprehensive resilience programs. Nevertheless, proponents maintain that when properly conceptualized and implemented, resilience initiatives can generate substantial value, not only in crisis situations but also in everyday operations.</p>
+        `,
+        question: "Which of the following best characterizes the 'paradoxical nature of resilience' as described in the passage?",
+        options: [
+            "Resilience concepts are inherently contradictory and logically flawed",
+            "Resilience requires balancing opposing organizational capabilities",
+            "Organizations cannot simultaneously achieve stability and adaptability",
+            "Resilience initiatives typically fail despite theoretical soundness",
+            "Standardized procedures universally undermine organizational adaptability"
+        ],
+        answer: "Resilience requires balancing opposing organizational capabilities",
+        explanation: "Paragraph 4 specifically discusses the 'paradoxical nature of resilience' and states that 'truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation.' This directly supports option B."
+    },
+    {
+        id: 'r7q5',
+        type: 'reading',
+        passage: `
+            <p>The concept of organizational resilience has evolved significantly over the past decade. Traditional perspectives on resilience focused primarily on risk management and business continuity planning—structured approaches to identifying potential threats and implementing safeguards. However, contemporary understanding has expanded to encompass a more dynamic and multifaceted framework. Modern organizational resilience is characterized by adaptive capacity: the ability to adjust, reconfigure, and transform in response to changing circumstances without compromising essential functions.</p>
+            <p>This shift reflects growing recognition that the business environment is increasingly characterized by what scholars term "VUCA" conditions—volatility, uncertainty, complexity, and ambiguity. Under such conditions, static defense mechanisms prove insufficient. Organizations must instead develop capabilities for sensing environmental changes, interpreting their implications, and reconfiguring resources accordingly. This requires not only robust systems and processes but also cultural elements such as psychological safety, which enables individuals to voice concerns and suggest novel approaches without fear of repercussion.</p>
+            <p>Empirical studies across diverse sectors suggest that resilient organizations share several key attributes: redundancy in critical systems, diversity in thought and capability, loose coupling between operational units, and strong organizational learning mechanisms. These features enable what organizational theorists call "requisite variety"—internal complexity sufficient to match external complexity. When properly calibrated, this variety allows organizations to maintain stability in core functions while simultaneously exploring new possibilities and configurations.</p>
+            <p>Recent research has also highlighted the paradoxical nature of resilience. The very qualities that promote stability under normal conditions may undermine adaptability during radical change. For instance, standardized procedures that enhance efficiency during routine operations can become liabilities when unprecedented challenges emerge. Consequently, truly resilient organizations must balance contradictory capabilities—exploitation versus exploration, centralization versus decentralization, and planning versus improvisation. This delicate equilibrium requires sophisticated governance mechanisms and leadership approaches that accommodate seemingly incompatible organizational logics.</p>
+            <p>Critics argue that the concept of resilience has become problematically elastic, potentially serving as a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals. From this perspective, exhortations to develop resilience may inadvertently normalize precarity rather than addressing its structural causes. This critique has particular relevance in contexts where resource constraints limit organizational capacity to implement comprehensive resilience programs. Nevertheless, proponents maintain that when properly conceptualized and implemented, resilience initiatives can generate substantial value, not only in crisis situations but also in everyday operations.</p>
+        `,
+        question: "Critics of resilience concepts argue that they can",
+        options: [
+            "Cost too much to implement effectively",
+            "Create excessive organizational complexity",
+            "Shift responsibility for systemic risks inappropriately",
+            "Overlook the importance of leadership development",
+            "Overemphasize environmental sensing mechanisms"
+        ],
+        answer: "Shift responsibility for systemic risks inappropriately",
+        explanation: "The passage states that critics argue resilience concepts can become 'a rhetorical device that transfers responsibility for managing systemic risks from institutions to individuals.' This directly aligns with option C."
+    },
 
 
 
@@ -314,7 +419,7 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err1',
         type: 'grammar', // Atau bisa 'error_identification' jika ingin lebih spesifik
-        question: "The final presentation <u>includes</u> (A) graphs, <u>detailed</u> (B) analysis, and (C) <u>it's</u> (D) main conclusions.",
+        question: "The final presentation <u>includes</u> (A) graphs, <u>detailed</u> (B) analysis, </u>and</u> (C) <u>it's</u> (D) main conclusions.",
         options: ["A", "B", "C", "D"], // Pilihan adalah penanda bagian
         answer: "D", // Jawaban adalah huruf bagian yang salah
         explanation: "Kesalahan ada pada (D) 'it's'. Seharusnya menggunakan possessive pronoun 'its' (tanpa apostrof) untuk menunjukkan kepemilikan ('conclusions' milik 'presentation'). 'It's' adalah singkatan dari 'it is' atau 'it has'."
@@ -338,7 +443,7 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err4',
         type: 'grammar',
-        question: "Responsibilities <u>include</u> (A) <u>managing</u> budgets, (B) <u>leading</u> the team, and (C) <u>to prepare</u> (D) weekly reports.",
+        question: "Responsibilities <u>include</u> (A) <u>managing</u> (B) budgets, <u>leading</u> (C) the team, and <u>to prepare</u> (D) weekly reports.",
         options: ["A", "B", "C", "D"],
         answer: "D",
         explanation: "Kesalahan ada pada (D) 'to prepare'. Untuk menjaga struktur paralel dalam daftar (managing..., leading...), bentuk gerund 'preparing' harus digunakan agar setara dengan item lainnya, bukan infinitive 'to prepare'."
@@ -346,7 +451,7 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err5',
         type: 'grammar',
-        question: "When <u>the auditors</u> (A) <u>arrived</u>, the finance department (B) <u>already prepares</u> (C) all the necessary (D) documents.",
+        question: "When <u>the auditors</u> (A) <u>arrived</u> (B) , the finance department <u>already prepares</u> (C) all the <u>necessary</u> (D) documents.",
         options: ["A", "B", "C", "D"],
         answer: "C",
         explanation: "Kesalahan ada pada (C) 'already prepares'. Tindakan menyiapkan dokumen ('prepare') terjadi *sebelum* auditor tiba ('arrived', masa lalu). Gunakan Past Perfect Tense ('had already prepared') untuk menekankan bahwa satu tindakan di masa lalu selesai sebelum tindakan lain di masa lalu dimulai."
