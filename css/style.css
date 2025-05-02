@@ -342,3 +342,90 @@ button:disabled {
         font-size: 1.3rem;
     }
 }
+
+/* css/style.css */
+
+/* ... (style sebelumnya) ... */
+
+#timer-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* Warna default (bisa merah seperti sebelumnya atau warna lain) */
+    color: #333;
+    margin-bottom: 25px;
+    padding: 10px 15px; /* Sesuaikan padding jika perlu */
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    display: inline-block;
+    min-width: 80px; /* Beri lebar minimum agar tidak loncat */
+    text-align: center;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease; /* Tambahkan transisi */
+}
+
+/* Kelas baru untuk state peringatan */
+#timer-display.timer-warning {
+    color: #D9534F; /* Warna merah menyala */
+    background-color: #fdf7f7; /* Latar sedikit merah muda */
+    border-color: #D9534F;
+    /* Animasi pulsing sederhana */
+    animation: pulseWarning 1s infinite ease-in-out;
+}
+
+/* Keyframes untuk animasi pulsing */
+@keyframes pulseWarning {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(217, 83, 79, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 5px 10px rgba(217, 83, 79, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(217, 83, 79, 0);
+    }
+}
+
+
+/* ... (sisa style) ... */
+
+/* Responsif untuk timer jika perlu */
+@media (max-width: 600px) {
+    #timer-display {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+        min-width: 70px;
+    }
+}
+
+#time-warning-bar {
+    position: fixed; /* Tetap di posisi saat scroll */
+    top: 0; /* Atau bottom: 0; */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Buat tipis */
+    background-color: transparent; /* Sembunyi secara default */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+    transition: background-color 0.5s ease; /* Transisi halus */
+    pointer-events: none; /* Agar tidak mengganggu klik */
+    opacity: 0; /* Mulai transparan */
+}
+
+#time-warning-bar.active-warning {
+    background-color: #D9534F; /* Warna merah peringatan */
+    opacity: 0.8; /* Sedikit transparan */
+    /* Tambahkan animasi jika diinginkan */
+    animation: pulseBarWarning 1.5s infinite ease-in-out;
+}
+
+/* Animasi opsional untuk bar */
+@keyframes pulseBarWarning {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.6; }
+}
+
+/* Pastikan container utama mungkin perlu padding atas/bawah jika bar tinggi */
+/* .container { padding-top: 10px; } */ /* Jika bar di atas dan tingginya 5px + margin */

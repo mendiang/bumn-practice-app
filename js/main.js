@@ -73,7 +73,7 @@ function handleNextQuestion() {
 }
 
 function handleTimerTick(timeLeft) {
-    ui.updateTimerDisplay(formatTime(timeLeft));
+    ui.updateTimerDisplay(timeLeft);
 }
 
 function endQuiz() {

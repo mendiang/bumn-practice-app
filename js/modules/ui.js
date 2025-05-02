@@ -1,10 +1,13 @@
 // js/modules/ui.js
+import { formatTime } from './timer.js'; 
 
 // Dapatkan referensi elemen sekali saja
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultsScreen = document.getElementById('results-screen');
 const timerDisplay = document.getElementById('timer-display');
+const timeWarningBar = document.getElementById('time-warning-bar'); // <-- Ambil elemen bar
+const WARNING_THRESHOLD_SECONDS = 15; // Batas waktu untuk notifikasi
 const passageTextElement = document.getElementById('passage-text'); // <-- Elemen baru
 const questionText = document.getElementById('question-text');
 const optionsList = document.getElementById('options-list');
@@ -30,8 +33,33 @@ function showScreen(screenName) {
     }
 }
 
-function updateTimerDisplay(timeString) {
-    timerDisplay.textContent = timeString;
+function updateTimerDisplay(timeLeft) {
+    // Format waktu untuk ditampilkan
+    timerDisplay.textContent = formatTime(timeLeft);
+
+    if (timeLeft <= WARNING_THRESHOLD_SECONDS && timeLeft > 0) {
+        // Waktu hampir habis, tambahkan kelas peringatan
+        if (!timerDisplay.classList.contains('timer-warning')) {
+            timerDisplay.classList.add('timer-warning');
+            timeWarningBar.classList.add('active-warning'); // <-- Tambahkan kelas ke bar
+        }
+    } else {
+        // Waktu masih cukup atau sudah habis (<=0), hapus kelas peringatan
+        if (timerDisplay.classList.contains('timer-warning')) {
+            timerDisplay.classList.remove('timer-warning');
+            timeWarningBar.classList.remove('active-warning'); // <-- Hapus kelas dari bar
+        }
+    }
+     // Jika waktu tepat 0 atau kurang, pastikan tidak ada warning lagi
+     if(timeLeft <= 0) {
+          timerDisplay.classList.remove('timer-warning');
+          timeWarningBar.classList.remove('active-warning'); // <-- Pastikan dihapus saat 0
+          // Mungkin tambahkan style lain untuk waktu habis? (Opsional)
+          // timerDisplay.style.color = '#888'; // Contoh: jadi abu-abu
+     } else {
+          // Reset style jika sebelumnya diubah saat 0 (jika ada)
+          // timerDisplay.style.color = ''; // Reset ke warna default atau warna warning
+     }
 }
 
 function displayQuestion(questionData, questionNumber, totalQuestions) {
