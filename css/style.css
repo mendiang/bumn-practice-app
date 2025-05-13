@@ -45,6 +45,11 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 15px;
+    /* === TAMBAHKAN ATAU PASTIKAN ADA INI === */
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti dengan font pilihan Anda */
+    font-weight: 500; /* Atau 600 atau bold, sesuai keinginan */
+    letter-spacing: 0.5px; /* Opsional: sedikit spasi antar huruf */
+    /* ======================================= */
 }
 
 button:hover:not(:disabled) {
@@ -356,8 +361,21 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
     }
 
     button {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff; /* Biru primer */
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 15px;
+        /* === TAMBAHKAN ATAU PASTIKAN ADA INI === */
+        font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti dengan font pilihan Anda */
+        font-weight: 500; /* Atau 600 atau bold, sesuai keinginan */
+        letter-spacing: 0.5px; /* Opsional: sedikit spasi antar huruf */
+        /* ======================================= */
     }
 
     #timer-display {
@@ -367,7 +385,7 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
 
     #question-progress-badge {
         margin-right: 6px;
-        margin-bottom: 8px; /* Jarak ke judul di bawahnya */
+        margin-bottom: 1px; /* Jarak ke judul di bawahnya */
         font-size: 0.75em;
         padding: 2px 5px;
     }
@@ -377,8 +395,8 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
     }
 
     #question-text {
-        font-size: 1.05 rem; /* Sesuaikan ukuran soal */
-        line-height: 3;
+        font-size: 1rem; /* Sesuaikan ukuran soal */
+        line-height: 2.5;
     }
 
     .option-button {
@@ -411,9 +429,23 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
         padding: 15px;
     }
      button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff; /* Biru primer */
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 15px;
+        /* === TAMBAHKAN ATAU PASTIKAN ADA INI === */
+        font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti dengan font pilihan Anda */
+        font-weight: 500; /* Atau 600 atau bold, sesuai keinginan */
+        letter-spacing: 0.5px; /* Opsional: sedikit spasi antar huruf */
+        /* ======================================= */
     }
+
     #timer-display {
         font-size: 1.3rem;
     }
