@@ -101,6 +101,39 @@ button:disabled {
     display: inline-block; /* Agar background tidak full width */
 }
 
+/* --- Styling untuk Header Informasi Soal BARU --- */
+.question-info-header {
+    display: flex;
+    align-items: center; /* Menyelaraskan item secara vertikal */
+    justify-content: space-between; /* Memberi ruang antara badge dan judul */
+    margin-bottom: 20px; /* Jarak ke area soal di bawahnya */
+    padding-bottom: 15px; /* Padding bawah */
+    border-bottom: 1px solid #e0e0e0; /* Garis pemisah tipis */
+    text-align: left; /* Pastikan teks di sini rata kiri */
+}
+
+/* Jika menggunakan style #question-progress-badge yang sudah ada: */
+#question-progress-badge { /* Ini akan menjadi style untuk badge yang disisipkan */
+    background-color: #0056b3;
+    color: white;
+    padding: 4px 9px; /* Mungkin perlu padding yang lebih kecil agar pas inline */
+    border-radius: 12px; /* Sesuaikan radius */
+    font-size: 0.8em;   /* Sesuaikan ukuran font */
+    font-weight: bold;
+    margin-right: 8px; /* Jarak dengan teks soal setelahnya */
+    display: inline-block; /* Penting agar bisa di-style padding & margin */
+    vertical-align: baseline; /* Agar sejajar dengan teks sekitarnya */
+}
+
+#question-section-title {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Gunakan font yang lebih menonjol jika ada */
+    font-size: 1.5rem; /* Ukuran judul bagian soal */
+    color: #333; /* Warna teks judul */
+    margin: 0; /* Hapus margin default h3 */
+    font-weight: 500; /* Sedikit lebih tebal */
+    flex-grow: 1; /* Biarkan judul mengambil sisa ruang */
+}
+
 #question-area {
     margin-bottom: 25px;
     text-align: left; /* Soal rata kiri */
@@ -120,10 +153,28 @@ button:disabled {
     display: none; /* Sembunyikan secara default, tampilkan oleh JS jika ada passage */
 }
 
+/* Pastikan #question-text bisa mengakomodasi elemen inline-block */
 #question-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-family: 'Lato', 'Segoe UI', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+    line-height: 1.8; /* Mungkin perlu sedikit penyesuaian line-height */
+    color: #2c3e50;
+    text-align: left; /* Pastikan rata kiri */
+}
+
+/* (OPSIONAL) Jika Anda ingin mengganti '____' dengan style khusus */
+.fill-in-blank {
+    display: inline-block;
+    width: 100px; /* Sesuaikan lebar */
+    border-bottom: 2px solid #007bff;
+    margin: 0 5px;
+    padding: 0 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff; /* Warna untuk teks jawaban jika diisi di sini */
+    /* Atau jika hanya garis: height: 1.2em; vertical-align: bottom; */
 }
 
 #options-list {
@@ -133,27 +184,29 @@ button:disabled {
 }
 
 #options-list li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .option-button {
     width: 100%; /* Tombol pilihan full width */
-    background-color: #e9ecef; /* Warna netral */
-    color: #333;
+    background-color: #f8f9fa; /* Latar yang lebih terang */
+    color: #343a40; /* Warna teks yang lebih gelap */
     text-align: left; /* Teks pilihan rata kiri */
-    padding: 12px 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px; /* Tambahkan radius */
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    padding: 14px 18px; /* Padding lebih nyaman */
+    border: 1px solid #d1d3d5; /* Border lebih soft */
+    border-radius: 6px; /* Radius sedikit lebih besar */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease; /* Tambah transisi transform */
     cursor: pointer; /* Eksplisit cursor pointer */
     font-size: 1rem;
     display: block; /* Pastikan block */
     margin-top: 0; /* Reset margin */
+    font-family: 'Lato', 'Segoe UI', sans-serif; /* Samakan font dengan soal */
 }
 
 .option-button:hover:not(:disabled) {
-    background-color: #d1dce5; /* Warna hover lebih terang */
+    background-color: #e9ecef;
     border-color: #adb5bd;
+    transform: translateY(-1px); /* Efek angkat sedikit saat hover */
 }
 
 .option-button:disabled {
@@ -271,6 +324,18 @@ button:disabled {
     background-color: #e0a800;
 }
 
+/* --- Penyesuaian Font Global (jika menggunakan Google Fonts) --- */
+body {
+    font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Lato sebagai fallback */
+    /* ... (sisa style body) ... */
+}
+
+h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
+    font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Montserrat untuk judul & tombol */
+    /* ... (jika ada style lain untuk h1,h2,button) ... */
+}
+
+
 /* --- Responsive Design --- */
 
 /* Untuk layar yang lebih kecil (misal: ponsel) */
@@ -300,13 +365,24 @@ button:disabled {
         padding: 8px;
     }
 
+    #question-progress-badge {
+        margin-right: 0;
+        margin-bottom: 8px; /* Jarak ke judul di bawahnya */
+        font-size: 0.85em;
+        padding: 5px 10px;
+    }
+
+    #question-section-title {
+        font-size: 1.3rem; /* Sesuaikan ukuran judul */
+    }
+
     #question-text {
-        font-size: 1.1rem;
+        font-size: 1.15rem; /* Sesuaikan ukuran soal */
+        line-height: 1.6;
     }
 
     .option-button {
-        padding: 10px 12px;
-        font-size: 0.9rem;
+        padding: 12px 15px;
     }
 
      #next-button {
@@ -324,7 +400,7 @@ button:disabled {
 
     #passage-text { font-size: 0.9rem; padding: 10px; }
     .social-links a { margin: 0 5px; }
-}
+    }
 
 /* Untuk layar sangat kecil */
 @media (max-width: 400px) {

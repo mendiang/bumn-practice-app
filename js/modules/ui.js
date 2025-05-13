@@ -18,6 +18,7 @@ const totalQuestionsElement = document.getElementById('total-questions');
 const restartButton = document.getElementById('restart-button');
 const explanationArea = document.getElementById('explanation-area'); // <-- Elemen baru
 const explanationTextElement = document.getElementById('explanation-text'); // <-- Elemen baru
+// === Akhir Elemen BARU ===
 
 function showScreen(screenName) {
     startScreen.style.display = 'none';
@@ -56,13 +57,11 @@ function updateTimerDisplay(timeLeft) {
           timeWarningBar.classList.remove('active-warning'); // <-- Pastikan dihapus saat 0
           // Mungkin tambahkan style lain untuk waktu habis? (Opsional)
           // timerDisplay.style.color = '#888'; // Contoh: jadi abu-abu
-     } else {
-          // Reset style jika sebelumnya diubah saat 0 (jika ada)
-          // timerDisplay.style.color = ''; // Reset ke warna default atau warna warning
-     }
+    }
 }
 
-function displayQuestion(questionData, questionNumber, totalQuestions) {
+// Modifikasi fungsi displayQuestion
+function displayQuestion(questionData, questionNumber, totalQuestions) { 
     // Tampilkan atau sembunyikan teks bacaan
     if (questionData.passage) {
         passageTextElement.innerHTML = questionData.passage; // Gunakan innerHTML jika ada format
@@ -72,7 +71,12 @@ function displayQuestion(questionData, questionNumber, totalQuestions) {
         passageTextElement.style.display = 'none';
     }
 
-    questionText.innerHTML = `(${questionNumber}/${totalQuestions}) ${questionData.question}`; // Kode yang Diperbaiki:
+    // === PERUBAHAN UTAMA: Menyisipkan badge ke dalam teks soal ===
+    // Buat string HTML untuk badge
+    const progressBadgeHTML = `<span id="question-progress-badge">${questionNumber}/${totalQuestions}</span>`;
+    // Gabungkan badge dengan teks pertanyaan
+    questionText.innerHTML = `${progressBadgeHTML} ${questionData.question}`;
+    // ============================================================
     optionsList.innerHTML = ''; // Kosongkan pilihan sebelumnya
     feedbackElement.textContent = ''; // Kosongkan feedback
     feedbackElement.className = 'feedback';
