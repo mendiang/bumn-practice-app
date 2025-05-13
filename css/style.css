@@ -366,10 +366,10 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
     }
 
     #question-progress-badge {
-        margin-right: 0;
+        margin-right: 6px;
         margin-bottom: 8px; /* Jarak ke judul di bawahnya */
-        font-size: 0.85em;
-        padding: 5px 10px;
+        font-size: 0.75em;
+        padding: 2px 5px;
     }
 
     #question-section-title {
@@ -377,8 +377,8 @@ h1, h2, h3, button { /* Termasuk #question-section-title karena itu h3 */
     }
 
     #question-text {
-        font-size: 1.15rem; /* Sesuaikan ukuran soal */
-        line-height: 1.6;
+        font-size: 1.05 rem; /* Sesuaikan ukuran soal */
+        line-height: 3;
     }
 
     .option-button {
