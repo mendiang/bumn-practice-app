@@ -952,7 +952,7 @@ const bumnErrorIdQuestions = [
     {
         id: 'bumn_err1',
         type: 'grammar', // Atau bisa 'error_identification' jika ingin lebih spesifik
-        question: "The final presentation <u>includes</u> (A) graphs, <u>detailed</u> (B) analysis, </u>and</u> (C) <u>it's</u> (D) main conclusions.",
+        question: "The final presentation <u>includes</u> (A) graphs, <u>detailed</u> (B) analysis, <u>and</u> (C) <u>it's</u> (D) main conclusions.",
         options: ["A", "B", "C", "D"], // Pilihan adalah penanda bagian
         answer: "D", // Jawaban adalah huruf bagian yang salah
         explanation: "Kesalahan ada pada (D) 'it's'. Seharusnya menggunakan possessive pronoun 'its' (tanpa apostrof) untuk menunjukkan kepemilikan ('conclusions' milik 'presentation'). 'It's' adalah singkatan dari 'it is' atau 'it has'."
